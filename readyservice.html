@@ -24,13 +24,22 @@ $(function() {
 	</script>
 </head> 
 <body>
-    <div data-role="page">
+    <div data-role="page" data-theme="d">
         <div data-role="header">
+			<a href="#menuPanel" data-icon="grid" data-theme='b'>Menu</a>
 			<h1>ReadyService</h1>
+			<a href="#adminPanel" data-icon="grid" data-theme='b'>Admin</a>			
         </div>
         <div data-role="content">
 			<h2>Welcome to <span title="All your service business are belong to us">ReadyService</span></h2>
-            <ul data-role="listview" data-inset="true" data-filter="true" id="links"></ul>                        
         </div>
+		<div data-role="panel" id="menuPanel" data-position="left" data-display="reveal" data-theme="c">			
+			<ul data-role="listview" data-inset='true' data-filter="true" id="links" data-theme='b'></ul>
+			<!-- <a href="#demo-links" data-rel="close" data-role="button" data-theme="e" data-icon="delete" data-inline="true">Close</a> -->
+		</div>
+		<div data-role="panel" id="adminPanel" data-position="right" data-display="reveal" data-theme="c">			
+			<h1>Admin</h1>
+		</div>		
+	</div>  
 </body>
 </html>
