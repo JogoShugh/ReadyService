@@ -1,34 +1,19 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>My Page</title> 
+	<title>ReadyService</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.js"></script>
-	<script src="handlebars.js"></script>	
+	<script src="handlebars.js"></script>
+	<script src="home.js"></script>
 	<script type="text/javascript">
 $(function() {
-var baseLink = 'http://apps.readyservice.com/RS/';
-var links = [
-	{ label: 'Locations' , link: 'SBM/RSViewLocations.aspx', img: 'locations.png' },
-	{ label: 'Service Calls' , link: 'SBM/RSViewCalls.aspx', img: 'service_calls.png'},
-	{ label: 'Contacts' , link: 'SBM/RSViewContacts.aspx', img: 'contacts.png'},
-	{ label: 'Inventory' , link: 'SBM/RSViewInventoryPart.aspx', img: 'inventory.png'},
-	{ label: 'Estimates' , link: 'SBM/RSViewEstimates.aspx', img: 'estimates.png' },
-	{ label: 'Work Orders' , link: 'SBM/RSViewWorkOrders.aspx', img: 'work_orders.png' },
-	{ label: 'Issues' , link: 'SBM/RSViewIssues.aspx', img: 'issues.png' },
-	{ label: 'Equipment' , link: 'SBM/RSViewInventoryEquip.aspx', img: 'Equipment.png' },
-	{ label: 'Service Visits' , link: 'SBM/RSViewVisits.aspx', img: 'service_visits.png' },
-	{ label: 'Schedule' , link: 'Modules/ReadySchedule/People.aspx', img: 'schedule.png' },
-	{ label: 'Communication' , link: 'Bliss/WallPost.aspx', img: 'comm_board.png' },
-	{ label: 'Documents', link: 'SBM/RSSBMHome.aspx', img: 'documents.png' }
-];
-var template = Handlebars.compile($('#linksTmpl').html());
-var html = template({ baseLink: baseLink, links: links});
-$('#links').append(html);
-$('#links').trigger('create');
-$('#links').listview('refresh');
+	var template = Handlebars.compile($('#linksTmpl').html());
+	var html = template(homeDto);
+	$('#links').append(html);	
+	$('#links').listview('refresh');
 });
 	</script>
 
@@ -41,18 +26,11 @@ $('#links').listview('refresh');
 <body>
     <div data-role="page">
         <div data-role="header">
-            	<h1>ReadyService</h1>
-
+			<h1>ReadyService</h1>
         </div>
-        <!-- /header -->
         <div data-role="content">
-            	<h2>Welcome to <span title="All your service business are belong to us">ReadyService</span></h2>
-
-            <div <ul data-role="listview" data-inset="true" data-filter="true" id="links">
-                </ul>
-            </div>
-            <!-- /content -->
+			<h2>Welcome to <span title="All your service business are belong to us">ReadyService</span></h2>
+            <ul data-role="listview" data-inset="true" data-filter="true" id="links"></ul>                        
         </div>
-        <!-- /page -->
 </body>
 </html>
