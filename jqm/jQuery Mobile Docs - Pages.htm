@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://jquerymobile.com/test/docs/pages/index.html -->
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://jquerymobile.com/test/docs/pages/index.html">--><base href=".">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>jQuery Mobile Docs - Pages</title> 
+	<link rel="stylesheet" href="http://jquerymobile.com/test/css/themes/default/jquery.mobile.css">  
+	<link rel="stylesheet" href="http://jquerymobile.com/test/docs/_assets/css/jqm-docs.css">
+
+	<script src="./jQuery Mobile Docs - Pages_files/jquery.js"></script>
+	<script src="./jQuery Mobile Docs - Pages_files/jqm-docs.js"></script>
+	<script src="./jQuery Mobile Docs - Pages_files/jquery.mobile.js"></script>
+
+</head> 
+<body style="zoom: 1;" class="ui-mobile-viewport ui-overlay-c"> 
+
+	<div data-role="page" class="type-interior ui-page ui-body-c" data-url="/test/docs/content/content-grids.html" tabindex="0" style="min-height: 541px;">
+
+		<div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+		<h1 class="ui-title" role="heading" aria-level="1">Grids</h1>
+		<a href="http://jquerymobile.com/test/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+		<a href="http://jquerymobile.com/test/docs/nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade" class="ui-btn-right ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Search"><span class="ui-btn-inner"><span class="ui-btn-text">Search</span><span class="ui-icon ui-icon-search ui-icon-shadow">&nbsp;</span></span></a>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-content" role="main">
+		<div class="content-primary">
+		
+		<h2>Layout grids</h2>
+		<p>Using multiple column layouts isn't generally recommended on a mobile device because of the narrow screen width, but there are times where you may need to place small elements side-by-side (like buttons or navigation tabs, for example). </p>
+		
+		<p>The jQuery Mobile framework provides a simple way to build CSS-based columns through a  block style class convention called <code>ui-grid</code>. </p>
+		
+		<p>There are four preset layouts that can be used in any situation that requires columns:</p>
+		<ul>
+			<li><strong>two</strong>-column (using the <code>ui-grid-a</code> class)</li>
+			<li><strong>three</strong>-column (using the <code>ui-grid-b</code> class)</li>
+			<li><strong>four</strong>-column (using the <code>ui-grid-c</code> class)</li>
+			<li><strong>five</strong>-column (using the <code>ui-grid-d</code> class)</li>
+		</ul>
+
+		<p>Grids are 100% width, completely invisible (no borders or backgrounds) and don't have padding or margins, so they shouldn't interfere with the styles of elements placed inside them. </p>
+		<p>Within the grid container, child elements are assigned <code>ui-block-a/b/c/d/e</code> in a sequential manner which makes each "block" element float side-by-side, forming the grid. The <code>ui-block-a</code> class essentially clears the floats which will start a new line (see multiple row grids, below).</p>
+			
+		<h2>Two column grids</h2>
+		<p>To build a two-column (50/50%) layout, start with a container with a <code>class</code> of <code>ui-grid-a</code>, and add two child containers inside it classed with <code>ui-block-a</code> for the first column and <code>ui-block-b</code> for the second:</p>
+
+<pre><code>
+&lt;div class="ui-grid-a"&gt;
+	&lt;div class="ui-block-a"&gt;&lt;strong&gt;I'm Block A&lt;/strong&gt; and text inside will wrap&lt;/div&gt;
+	&lt;div class="ui-block-b"&gt;&lt;strong&gt;I'm Block B&lt;/strong&gt; and text inside will wrap&lt;/div&gt;
+&lt;/div&gt;&lt;!-- /grid-a --&gt;
+</code></pre>
+
+
+		
+		<p>The above markup produces the following content layout:</p>
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap.</div>
+			<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap.</div>
+		</div><!-- /grid-a -->
+		
+		<p>As you see above, by default grid blocks have no visual styling; they simply present content side-by-side.</p>
+		
+		<p>Grid classes can be applied to any container. In this next example, we add <code>ui-grid-a</code> to a <code>fieldset</code>, and apply the <code>ui-block</code> classes to the container of each of the two buttons inside to stretch them each to 50% of the screen width:</p>
+
+<pre><code>
+&lt;fieldset class="ui-grid-a"&gt;
+	&lt;div class="ui-block-a"&gt;&lt;button type="submit" data-theme="c"&gt;Cancel&lt;/button&gt;&lt;/div&gt;
+	&lt;div class="ui-block-b"&gt;&lt;button type="submit" data-theme="b"&gt;Submit&lt;/button&gt;&lt;/div&gt;	   
+&lt;/fieldset&gt;
+</code></pre>
+	
+		<fieldset class="ui-grid-a">
+			<div class="ui-block-a"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="false" class="ui-submit ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Cancel</span></span><button type="submit" data-theme="c" class="ui-btn-hidden" data-disabled="false">Cancel</button></div></div>
+			<div class="ui-block-b"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" data-disabled="false" class="ui-submit ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Submit</span></span><button type="submit" data-theme="b" class="ui-btn-hidden" data-disabled="false">Submit</button></div></div>	   
+		</fieldset>
+
+		<p>Please note that the framework adds left and right margin to buttons in a grid. For a single button you can use a container with class <code>ui-grid-solo</code> and wrap the button in a div with class <code>ui-block-a</code> like the example below. This way the button will get the same margin.</p>
+		 
+<pre><code>
+&lt;div class="ui-grid-a"&gt;
+	&lt;div class="ui-block-a"&gt;&lt;button type="button" data-theme="c"&gt;Previous&lt;/button&gt;&lt;/div&gt;
+	&lt;div class="ui-block-b"&gt;&lt;button type="button" data-theme="c"&gt;Next&lt;/button&gt;&lt;/div&gt;	   
+&lt;/div&gt;
+&lt;div class="ui-grid-solo"&gt;
+	&lt;div class="ui-block-a"&gt;&lt;button type="v" data-theme="b"&gt;More&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+		<div class="ui-grid-a">
+			<div class="ui-block-a"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="false" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Previous</span></span><button type="button" data-theme="c" class="ui-btn-hidden" data-disabled="false">Previous</button></div></div>
+			<div class="ui-block-b"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="false" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Next</span></span><button type="button" data-theme="c" class="ui-btn-hidden" data-disabled="false">Next</button></div></div>	   
+		</div>
+
+		<div class="ui-grid-solo">
+			<div class="ui-block-a"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" data-disabled="false" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">More</span></span><button type="button" data-theme="b" class="ui-btn-hidden" data-disabled="false">More</button></div></div>
+		</div>
+	    
+		<p>Theme classes (not data-theme attributes) from the <a href="http://jquerymobile.com/test/docs/api/themes.html" class="ui-link">theming system</a> can be added to an element, including grids. On the blocks below, we're adding two classes: <code>ui-bar</code> to add the default bar padding and <code>ui-bar-e</code> to apply the background gradient and font styling for the "e" toolbar theme swatch. For illustration purposes, an inline <code>style="height:120px"</code> attribute is also added to each grid to set each to a standard height. </p>
+			
+		<div class="ui-grid-a">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">Block A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">Block B</div></div>
+		</div><!-- /grid-a -->
+
+		<h2>Three-column grids</h2>
+		<p>The other grid layout configuration uses <code>class=ui-grid-b</code> on the parent, and 3 child container elements, each with its respective <code>ui-block-a/b/c</code> class, to create a three-column layout (33/33/33%). Note: These blocks are also styled with theme classes so the grid layout is clearly visible.</p>
+	
+<pre><code>
+&lt;div class="ui-grid-b"&gt;
+	&lt;div class="ui-block-a"&gt;Block A&lt;/div&gt;
+	&lt;div class="ui-block-b"&gt;Block B&lt;/div&gt;
+	&lt;div class="ui-block-c"&gt;Block C&lt;/div&gt;
+&lt;/div&gt;&lt;!-- /grid-b --&gt;
+</code></pre>
+		
+		<p>This will produce a 33/33/33% grid for our content.</p>
+			
+		<div class="ui-grid-b">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">Block A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">Block B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">Block C</div></div>
+		</div><!-- /grid-b -->
+		
+		<p>And an example of a 3 column grid with buttons inside:</p>
+
+		<fieldset class="ui-grid-b">
+			<div class="ui-block-a"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="false" class="ui-submit ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Hmm</span></span><button type="submit" data-theme="c" class="ui-btn-hidden" data-disabled="false">Hmm</button></div></div>
+			<div class="ui-block-b"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" data-disabled="false" class="ui-submit ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">No</span></span><button type="submit" data-theme="a" class="ui-btn-hidden" data-disabled="false">No</button></div></div>	 
+			<div class="ui-block-c"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="b" data-disabled="false" class="ui-submit ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Yes</span></span><button type="submit" data-theme="b" class="ui-btn-hidden" data-disabled="false">Yes</button></div></div>  
+		</fieldset>
+		
+		<h2>Four-column grids</h2>
+		
+		<p>A four-column, 25/25/25/25% grid is created by specifying <code>class=ui-grid-c</code> on the parent and adding a fourth block. Note: These blocks are also styled with theme classes so the grid layout is clearly visible.</p>
+			
+		<div class="ui-grid-c">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+			<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:120px">D</div></div>
+		</div><!-- /grid-c -->
+		
+		<h2>Five-column grids</h2>
+		<p>A five-column, 20/20/20/20/20% grid is created by specifying <code>class=ui-grid-d</code> on the parent and adding a fifth block. Note: These blocks are also styled with theme classes so the grid layout is clearly visible.</p>
+			
+		<div class="ui-grid-d">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+			<div class="ui-block-d"><div class="ui-bar ui-bar-e" style="height:120px">D</div></div>
+			<div class="ui-block-e"><div class="ui-bar ui-bar-e" style="height:120px">E</div></div>
+		</div><!-- /grid-c -->
+		
+		<h2>Multiple row grids</h2>
+		
+		<p>Grids are designed to wrap to multiple rows of items. For example, if you specify a 3-column grid (ui-grid-b) on a container that has nine child blocks, it will wrap to 3 rows of 3 items each. There is a CSS rule to clear the floats and start a new line when the <code>class=ui-block-a</code> is seen so make sure to assign block classes in a repeating sequence (a, b, c, a, b, c, etc.) that maps to the grid type:</p>
+			
+		<div class="ui-grid-b">
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+			<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+			<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+			<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+		</div><!-- /grid-c -->
+		
+		
+		<h2>Making responsive grids</h2>
+		<p>Grids can be made responsive so they adapt to various screen widths which is useful if used for building full page layouts. Learn more in the <a href="http://jquerymobile.com/test/docs/pages/content-grids-responsive.html" class="ui-link">responsive grids</a>.</p>
+	
+	
+	</div><!--/content-primary -->		
+	
+	<div class="content-secondary">
+		
+		<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://jquerymobile.com/test/docs/pages/index.html#" class="ui-collapsible-heading-toggle ui-btn ui-btn-up-b ui-fullsize ui-btn-icon-left" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="plus" data-iconpos="left" data-theme="b" data-mini="false"><span class="ui-btn-inner"><span class="ui-btn-text">More in this section<span class="ui-collapsible-heading-status"> click to expand contents</span></span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a></h3><div class="ui-collapsible-content ui-body-d ui-collapsible-content-collapsed" aria-hidden="true">
+			
+				
+				
+				<ul data-role="listview" data-theme="c" data-dividertheme="d" class="ui-listview">
+				
+						<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-d ui-first-child">Content Formatting</li>
+						<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-html.html" class="ui-link-inherit">Basic HTML styles</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						<li data-theme="a" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-a"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-grids.html" class="ui-link-inherit">Layout grids (columns)</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-grids-responsive.html" class="ui-link-inherit">Responsive grids</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-collapsible.html" class="ui-link-inherit">Collapsible content blocks</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-collapsible-set.html" class="ui-link-inherit">Collapsible sets (accordions)</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+						<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li ui-last-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/content-themes.html" class="ui-link-inherit">Theming content</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+	
+				</ul>
+		</div></div>
+	</div>		
+
+</div><!-- /content -->
+
+<div data-role="footer" class="footer-docs ui-footer ui-bar-c" data-theme="c" role="contentinfo">
+		<p class="jqm-version">Version 1.3.0 RC1</p>
+		<p>Copyright 2013 The jQuery Foundation</p>
+</div>
+	
+</div><!-- /page -->
+
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div><div data-role="page" class="type-interior ui-page ui-body-c ui-page-active" data-url="/test/docs/pages/index.html" data-external-page="true" tabindex="0" style="min-height: 541px;">
+
+		<div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+		<h1 class="ui-title" role="heading" aria-level="1">Navigation System</h1>
+		<a href="http://jquerymobile.com/test/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+		<a href="http://jquerymobile.com/test/docs/nav.html" data-icon="search" data-iconpos="notext" data-rel="dialog" data-transition="fade" class="ui-btn-right ui-btn ui-btn-up-f ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Search"><span class="ui-btn-inner"><span class="ui-btn-text">Search</span><span class="ui-icon ui-icon-search ui-icon-shadow">&nbsp;</span></span></a>
+	</div><!-- /header -->
+
+	<div data-role="content" class="ui-content" role="main">
+		<div class="content-primary">
+			<h2>Navigation: Pages &amp; dialogs</h2>
+			<p>jQuery Mobile includes a <a href="http://jquerymobile.com/test/docs/pages/page-navmodel.html" class="ui-link">navigation system</a> to load linked pages into the DOM via AJAX, enhance the new content, then display pages with a rich set of animated page <a href="http://jquerymobile.com/test/docs/pages/page-transitions.html" class="ui-link">transitions</a>. The navigation system automatically transforms all <a href="http://jquerymobile.com/test/docs/pages/page-links.html" class="ui-link">links</a> and forms by using progressive enhancement to hijack links and issue AJAX requests. </p>
+			<p>The back button is fully supported so <a href="http://jquerymobile.com/test/docs/pages/page-anatomy.html" class="ui-link">pages</a>, <a href="http://jquerymobile.com/test/docs/pages/dialog/index.html" class="ui-link">dialogs</a>, and <a href="http://jquerymobile.com/test/docs/pages/popup/index.html" class="ui-link">popups</a> all seamlessly work with the navigation system. There are tools to <a href="http://jquerymobile.com/test/docs/pages/page-cache.html" class="ui-link">prefetch &amp; cache</a>, <a href="http://jquerymobile.com/test/docs/pages/page-dynamic.html" class="ui-link">dynamically inject</a>, and <a href="http://jquerymobile.com/test/docs/pages/page-scripting.html" class="ui-link">script</a> pages for advanced use cases.</p>
+      </div>
+		<!--/content-primary -->
+
+				<div class="content-secondary">
+
+					<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://jquerymobile.com/test/docs/pages/index.html#" class="ui-collapsible-heading-toggle ui-btn ui-btn-up-b ui-fullsize ui-btn-icon-left" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-icon="plus" data-iconpos="left" data-theme="b" data-mini="false"><span class="ui-btn-inner"><span class="ui-btn-text">In this section<span class="ui-collapsible-heading-status"> click to expand contents</span></span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a></h3><div class="ui-collapsible-content ui-body-d ui-collapsible-content-collapsed" aria-hidden="true">
+
+							
+
+							<ul data-role="listview" data-theme="c" data-dividertheme="d" class="ui-listview">
+
+								<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-d ui-first-child">Pages &amp; Dialogs</li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-anatomy.html" class="ui-link-inherit">Anatomy of a page</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-template.html" data-ajax="false" class="ui-link-inherit">Single page template</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/multipage-template.html" data-ajax="false" class="ui-link-inherit">Multi-page template</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-titles.html" class="ui-link-inherit">Page titles</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-links.html" class="ui-link-inherit">Linking pages</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-transitions.html" class="ui-link-inherit">Page transitions</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/loader.html" class="ui-link-inherit">Page loading widget</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/dialog/index.html" class="ui-link-inherit">Dialogs</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/popup/index.html" class="ui-link-inherit">Popups</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-cache.html" class="ui-link-inherit">Prefetching &amp; caching pages</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-navmodel.html" class="ui-link-inherit">Ajax, hashes &amp; history</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-dynamic.html" class="ui-link-inherit">Dynamically injecting pages</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/page-scripting.html" class="ui-link-inherit">Scripting pages</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/backbone-require.html" class="ui-link-inherit">Backbone.js and Require.js apps</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/phonegap.html" class="ui-link-inherit">PhoneGap apps</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/touchoverflow.html" class="ui-link-inherit">touchOverflow feature</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+								<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li ui-last-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="http://jquerymobile.com/test/docs/pages/pages-themes.html" class="ui-link-inherit">Theming pages</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+							</ul>
+					</div></div>
+				</div>
+
+			</div><!-- /content -->
+
+			<div data-role="footer" class="footer-docs ui-footer ui-bar-c" data-theme="c" role="contentinfo">
+					<p class="jqm-version">Version 1.3.0 RC1</p>
+				<p>Copyright 2013 The jQuery Foundation</p>
+			</div>
+
+			</div></body></html>
