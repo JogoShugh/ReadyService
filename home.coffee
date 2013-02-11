@@ -49,3 +49,5 @@ homeDto =
     link: "SBM/RSSBMHome.aspx"
     img: "documents.png"
   ]
+
+window.homeDto = homeDto  

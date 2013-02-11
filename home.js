@@ -57,4 +57,6 @@
     ]
   };
 
+  window.homeDto = homeDto;
+
 }).call(this);
