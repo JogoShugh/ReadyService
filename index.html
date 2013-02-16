@@ -9,7 +9,7 @@
 	<script src="handlebars.js"></script>
 	<script src="home.js"></script>
 	<script type="text/javascript">
-$(function() {
+$(document).on('pageinit', function() {
 	var template = Handlebars.compile($('#linksTmpl').html());
 	var html = template(homeDto);
 	$('#links').append(html);	
@@ -19,16 +19,21 @@ $(function() {
 
 	<script id='linksTmpl' type='text/x-handlebars-template'>
 		{{#each links}}
-			<li><a href="{{../baseLink}}{{link}}"><img src="image/{{img}}" alt="{{label}}" class="ui-li-icon"> {{label}}</a></li>	
+			<li><a onclick="window.location = '{{../baseLink}}{{link}}'"><img src="image/{{img}}" alt="{{label}}" class="ui-li-icon"> {{label}}</a></li>	
 		{{/each}}
 	</script>
 </head> 
 <body>
     <div data-role="page" data-theme="d">
-        <div data-role="header">
-			<a href="#menuPanel" data-icon="grid" data-theme='b'>Menu</a>
-			<h1>ReadyService</h1>
-			<a href="#adminPanel" data-icon="grid" data-theme='b'>Admin</a>			
+   		<div data-role='header' data-theme='a'>
+ 			<div data-role="navbar" data-iconpos='left'>
+	        	<ul>
+	        		<li><a data-theme='b' href="#menuPanel" data-icon="bars">Menu</a>
+	        		<li><a data-theme='b' href="#" data-icon="gear">Admin</a>	        			
+					<li><a data-theme='b' href="#reportPanel" data-icon="grid">Reports</a></li>
+				</ul>
+        	</div>
+        	<h1>ReadyService</h1>
         </div>
         <div data-role="content">
 			<h2>Welcome to <span title="All your service business are belong to us">ReadyService</span></h2>
@@ -37,9 +42,12 @@ $(function() {
 			<ul data-role="listview" data-inset='true' data-filter="true" id="links" data-theme='b'></ul>
 			<!-- <a href="#demo-links" data-rel="close" data-role="button" data-theme="e" data-icon="delete" data-inline="true">Close</a> -->
 		</div>
-		<div data-role="panel" id="adminPanel" data-position="right" data-display="overlay" data-theme="c">			
-			<h1>Admin</h1>
-		</div>		
+		<div data-role="panel" id="reportPanel" data-position="right" data-display="overlay" data-theme="c">			
+			<ul data-role="listview" data-inset='true' data-filter="true" id="reports" data-theme='b' data-icon="arrow-l">
+				<li><a onclick="window.location ='report_sales.html'">Sales</a></li>
+				<li><a href="#">Leads</a></li>				
+			</ul>
+		</div>			
 	</div>  
 </body>
 </html>
