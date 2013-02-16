@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>ReadyService</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.js"></script>
+	<script src="handlebars.js"></script>
+	<script src="home.js"></script>
+	<style type="text/css">
+		th { background: #dddddd; }
+	</style>	
+	<script type="text/javascript">
+$(function() {
+	var template = Handlebars.compile($('#linksTmpl').html());
+	var html = template(homeDto);
+	$('#links').append(html);	
+	$('#links').listview('refresh');
+
+	var data = { 
+		columns: [
+			{ label: 'Call Detail'},
+			{ label: 'Call Date'},
+			{ label: 'Job Address'},
+			{ label: 'Contact Name'},
+			{ label: 'Phone'},
+			{ label: 'Mobile'},
+			{ label: 'Email'},
+			{ label: 'Call Type'},
+			{ label: 'Status'}
+		],
+		rows : [
+			[1, '2/11/2013', '138 McElroy Road, Fayetteville Georgia 30214', '', '', '', '', 'RFS', 'O'],
+			[2, '12/12/2012', '600 Mohawk Cir, Stockbridge Georgia 30281','', '', '', '', 'RFS', 'O'],
+			[3, '1/4/2013', '5 Fern Rd, McDonough Georgia 30281','', '', '', '', 'RFS', 'O'],
+			[4, '2/5/2013', '1584 Thornwick Trace, Stockbridge Georgia 30281','', '', '', '', 'RFS', 'O'],
+			[5, '2/6/2013', '600 Mohawk Cir, Stockbridge Georgia 30281','', '', '', '', 'RFS', 'O'],
+			[6, '2/7/2013', '3440 brookview dr, loganville Georgia 30052','', '', '', '', 'RFS', 'O'],			
+		]
+	};
+
+	var dTemplate = Handlebars.compile($('#tableTmpl').html());
+	var dHtml = dTemplate(data);
+	$('#data').append(dHtml);	
+	$('#data table').table();
+});
+	</script>
+
+	<script id='linksTmpl' type='text/x-handlebars-template'>
+		{{#each links}}
+			<li><a href="{{../baseLink}}{{link}}"><img src="image/{{img}}" alt="{{label}}" class="ui-li-icon"> {{label}}</a></li>	
+		{{/each}}
+	</script>
+
+	<script id='tableTmpl' type='text/x-handlebars-template'>
+		<table data-role="table" class="ui-responsive table-stroke">
+		  <thead>
+		  	<tr>
+			  	{{#each columns}}
+			      <th>{{label}}</th>
+			    {{/each}}
+		    </tr>
+		  </thead>
+		  <tbody>
+	  		{{#each rows}}
+	  			<tr>
+	  				{{#each this}}
+	  					<td>{{this}}</td>
+	  				{{/each}}
+		      	</tr>
+		    {{/each}}
+		   </tbody>
+		</table>	
+	</script>
+</head> 
+<body>
+    <div data-role="page" data-theme="d">
+        <div data-role="header">
+			<a href="#menuPanel" data-icon="grid" data-theme='b'>Menu</a>
+			<h1>Service Calls</h1>
+			<a href="#adminPanel" data-icon="grid" data-theme='b'>Admin</a>			
+        </div>
+        <div data-role="content">
+			<h2>Welcome to <span title="All your service business are belong to us">ReadyService</span></h2>
+			<div id="data"></div>
+        </div>
+		<div data-role="panel" id="menuPanel" data-position="left" data-display="reveal" data-theme="c">			
+			<ul data-role="listview" data-inset='true' data-filter="true" id="links" data-theme='b'></ul>
+			<!-- <a href="#demo-links" data-rel="close" data-role="button" data-theme="e" data-icon="delete" data-inline="true">Close</a> -->
+		</div>
+		<div data-role="panel" id="adminPanel" data-position="right" data-display="reveal" data-theme="c">			
+			<h1>Admin</h1>
+		</div>		
+	</div>  
+</body>
+</html>

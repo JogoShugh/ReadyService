@@ -3,7 +3,8 @@
   var homeDto;
 
   homeDto = {
-    baseLink: "http://apps.readyservice.com/RS/",
+    //baseLink: "http://apps.readyservice.com/RS/",
+    baseLink: "",
     links: [
       {
         label: "Locations",
@@ -11,7 +12,7 @@
         img: "locations.png"
       }, {
         label: "Service Calls",
-        link: "SBM/RSViewCalls.aspx",
+        link: "service_calls.html",
         img: "service_calls.png"
       }, {
         label: "Contacts",
