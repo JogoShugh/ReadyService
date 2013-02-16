@@ -9,7 +9,14 @@
 	<script src="handlebars.js"></script>
 	<script src="home.js"></script>
 	<style type="text/css">
-		th { background: #dddddd; }
+		@media ( min-width: 560px ) {
+			th { background: #dddddd; }
+		}
+		@media ( max-width: 559px ) {
+			tr {
+				border-bottom: 2px solid #dddddd;
+			}
+		}
 	</style>	
 	<script type="text/javascript">
 $(function() {
